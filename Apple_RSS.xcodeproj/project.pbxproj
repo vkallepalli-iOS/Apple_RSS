@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		E08A0E1024DF3BA00000717C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A0E0F24DF3BA00000717C /* AppDelegate.swift */; };
 		E08A0E1224DF3BA00000717C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A0E1124DF3BA00000717C /* SceneDelegate.swift */; };
-		E08A0E1424DF3BA00000717C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A0E1324DF3BA00000717C /* ViewController.swift */; };
-		E08A0E1724DF3BA00000717C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08A0E1524DF3BA00000717C /* Main.storyboard */; };
 		E08A0E1A24DF3BA00000717C /* Apple_RSS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E08A0E1824DF3BA00000717C /* Apple_RSS.xcdatamodeld */; };
 		E08A0E1C24DF3BA20000717C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E08A0E1B24DF3BA20000717C /* Assets.xcassets */; };
 		E08A0E1F24DF3BA20000717C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08A0E1D24DF3BA20000717C /* LaunchScreen.storyboard */; };
 		E08A0E2A24DF3BA20000717C /* Apple_RSSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A0E2924DF3BA20000717C /* Apple_RSSTests.swift */; };
 		E08A0E3524DF3BA20000717C /* Apple_RSSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A0E3424DF3BA20000717C /* Apple_RSSUITests.swift */; };
+		E08A0E4B24E233AD0000717C /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A0E4A24E233AD0000717C /* Album.swift */; };
+		E08A0E5024E240960000717C /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A0E4F24E240960000717C /* AlbumListViewController.swift */; };
+		E08A0E5224E2466B0000717C /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A0E5124E2466B0000717C /* AlbumTableViewCell.swift */; };
+		E09AB55224EA3A6200281AA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E09AB55124EA3A6200281AA4 /* Main.storyboard */; };
+		E0B3D57824E9987A0060C5E9 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3D57724E9987A0060C5E9 /* AlbumDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +42,6 @@
 		E08A0E0C24DF3BA00000717C /* Apple_RSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apple_RSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08A0E0F24DF3BA00000717C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E08A0E1124DF3BA00000717C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E08A0E1324DF3BA00000717C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E08A0E1624DF3BA00000717C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E08A0E1924DF3BA00000717C /* Apple_RSS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Apple_RSS.xcdatamodel; sourceTree = "<group>"; };
 		E08A0E1B24DF3BA20000717C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E08A0E1E24DF3BA20000717C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +52,11 @@
 		E08A0E3024DF3BA20000717C /* Apple_RSSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Apple_RSSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08A0E3424DF3BA20000717C /* Apple_RSSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple_RSSUITests.swift; sourceTree = "<group>"; };
 		E08A0E3624DF3BA20000717C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E08A0E4A24E233AD0000717C /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		E08A0E4F24E240960000717C /* AlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
+		E08A0E5124E2466B0000717C /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		E09AB55124EA3A6200281AA4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E0B3D57724E9987A0060C5E9 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +109,15 @@
 			children = (
 				E08A0E0F24DF3BA00000717C /* AppDelegate.swift */,
 				E08A0E1124DF3BA00000717C /* SceneDelegate.swift */,
-				E08A0E1324DF3BA00000717C /* ViewController.swift */,
-				E08A0E1524DF3BA00000717C /* Main.storyboard */,
+				E09AB55124EA3A6200281AA4 /* Main.storyboard */,
 				E08A0E1B24DF3BA20000717C /* Assets.xcassets */,
 				E08A0E1D24DF3BA20000717C /* LaunchScreen.storyboard */,
 				E08A0E2024DF3BA20000717C /* Info.plist */,
 				E08A0E1824DF3BA00000717C /* Apple_RSS.xcdatamodeld */,
+				E08A0E4C24E233B80000717C /* Model */,
+				E08A0E4F24E240960000717C /* AlbumListViewController.swift */,
+				E0B3D57724E9987A0060C5E9 /* AlbumDetailViewController.swift */,
+				E08A0E5124E2466B0000717C /* AlbumTableViewCell.swift */,
 			);
 			path = Apple_RSS;
 			sourceTree = "<group>";
@@ -129,6 +138,14 @@
 				E08A0E3624DF3BA20000717C /* Info.plist */,
 			);
 			path = Apple_RSSUITests;
+			sourceTree = "<group>";
+		};
+		E08A0E4C24E233B80000717C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E08A0E4A24E233AD0000717C /* Album.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +252,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E09AB55224EA3A6200281AA4 /* Main.storyboard in Resources */,
 				E08A0E1F24DF3BA20000717C /* LaunchScreen.storyboard in Resources */,
 				E08A0E1C24DF3BA20000717C /* Assets.xcassets in Resources */,
-				E08A0E1724DF3BA00000717C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,10 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E08A0E1424DF3BA00000717C /* ViewController.swift in Sources */,
 				E08A0E1024DF3BA00000717C /* AppDelegate.swift in Sources */,
 				E08A0E1224DF3BA00000717C /* SceneDelegate.swift in Sources */,
 				E08A0E1A24DF3BA00000717C /* Apple_RSS.xcdatamodeld in Sources */,
+				E08A0E5224E2466B0000717C /* AlbumTableViewCell.swift in Sources */,
+				E0B3D57824E9987A0060C5E9 /* AlbumDetailViewController.swift in Sources */,
+				E08A0E5024E240960000717C /* AlbumListViewController.swift in Sources */,
+				E08A0E4B24E233AD0000717C /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +321,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E08A0E1524DF3BA00000717C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E08A0E1624DF3BA00000717C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E08A0E1D24DF3BA20000717C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
