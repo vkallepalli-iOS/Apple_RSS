@@ -13,6 +13,9 @@ class AlbumListViewController: UITableViewController {
 
     var navBarDefaultImage: UIImage?
     var albums = [Album]()
+    let loadingView = UIView()
+    let spinner = UIActivityIndicatorView()
+    let loadingLabel = UILabel()
     
     
     override func viewDidLoad() {
@@ -20,6 +23,8 @@ class AlbumListViewController: UITableViewController {
         
         self.tableView.register(AlbumTableViewCell.self, forCellReuseIdentifier: "albumCell")
         self.tableView.separatorInset = UIEdgeInsets(top: 0, left: 80, bottom: 0, right: 0)
+        self.tableView.separatorStyle = .none
+        setLoadingScreen()
         setUpNavigation()
         getAlbums()
     }
@@ -93,7 +98,9 @@ class AlbumListViewController: UITableViewController {
                                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                                 self.albums = try decoder.decode([Album].self, from: jsonResults)
                                 DispatchQueue.main.async {
+                                    self.tableView.separatorStyle = .singleLine
                                     self.tableView.reloadData()
+                                    self.removeLoadingScreen()
                                 }
                             } catch {
                                 print(error)
@@ -108,6 +115,8 @@ class AlbumListViewController: UITableViewController {
         task.resume()
     }
     
+    // MARK: - CUSTOM FUNCTIONS
+    
     func setCustomNavigationBarSettings() {
         navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController!.navigationBar.setBackgroundImage(nil, for: .default)
@@ -121,12 +130,12 @@ class AlbumListViewController: UITableViewController {
     func applyTransparentBackgroundToTheNavigationBar(_ opacity: CGFloat) {
         var transparentBackground: UIImage
         
-       
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 1, height: 1),
                                                false,
                                                navigationController!.navigationBar.layer.contentsScale)
         let context = UIGraphicsGetCurrentContext()!
-        context.setFillColor(red: 1, green: 1, blue: 1, alpha: opacity)
+        //context.setFillColor(red: 1, green: 1, blue: 1, alpha: opacity)
+        context.setFillColor(UIColor.systemBackground.withAlphaComponent(opacity).cgColor)
         UIRectFill(CGRect(x: 0, y: 0, width: 1, height: 1))
         transparentBackground = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
@@ -134,7 +143,50 @@ class AlbumListViewController: UITableViewController {
         let navigationBarAppearance = self.navigationController!.navigationBar
         navigationBarAppearance.setBackgroundImage(transparentBackground, for: .default)
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if #available(iOS 13.0, *) {
+            if (UIApplication.shared.applicationState == .inactive && self.traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
+                applyTransparentBackgroundToTheNavigationBar(0.97)
+            }
+        }
+    }
+    
+    func traitCollectionDidChangeCustom(_ previousTraitCollection: UITraitCollection?) {
+        self.traitCollectionDidChange(previousTraitCollection)
+    }
+    
+    func setLoadingScreen() {
 
+        let width: CGFloat = 120
+        let height: CGFloat = 30
+        let x = (self.view.frame.width / 2) - (width / 2)
+        let y = (self.view.frame.height / 2) - (height / 2) - (navigationController?.navigationBar.frame.height)!
+        loadingView.frame = CGRect(x: x, y: y, width: width, height: height)
+
+        loadingLabel.textColor = .gray
+        loadingLabel.textAlignment = .center
+        loadingLabel.text = "Loading"
+        loadingLabel.frame = CGRect(x: 0, y: 0, width: 140, height: 30)
+
+        spinner.style = .medium
+        spinner.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        spinner.startAnimating()
+
+        loadingView.addSubview(spinner)
+        loadingView.addSubview(loadingLabel)
+
+        tableView.addSubview(loadingView)
+    }
+
+    func removeLoadingScreen() {
+
+        spinner.stopAnimating()
+        spinner.isHidden = true
+        loadingLabel.isHidden = true
+
+    }
 }
 
 extension UIImage {

@@ -18,6 +18,7 @@
 		E08A0E5024E240960000717C /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A0E4F24E240960000717C /* AlbumListViewController.swift */; };
 		E08A0E5224E2466B0000717C /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08A0E5124E2466B0000717C /* AlbumTableViewCell.swift */; };
 		E09AB55224EA3A6200281AA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E09AB55124EA3A6200281AA4 /* Main.storyboard */; };
+		E09AB59B24EC6C6000281AA4 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09AB59A24EC6C6000281AA4 /* ImageService.swift */; };
 		E0B3D57824E9987A0060C5E9 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B3D57724E9987A0060C5E9 /* AlbumDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		E08A0E4F24E240960000717C /* AlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
 		E08A0E5124E2466B0000717C /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		E09AB55124EA3A6200281AA4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E09AB59A24EC6C6000281AA4 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		E0B3D57724E9987A0060C5E9 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 				E08A0E4F24E240960000717C /* AlbumListViewController.swift */,
 				E0B3D57724E9987A0060C5E9 /* AlbumDetailViewController.swift */,
 				E08A0E5124E2466B0000717C /* AlbumTableViewCell.swift */,
+				E09AB59A24EC6C6000281AA4 /* ImageService.swift */,
 			);
 			path = Apple_RSS;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E08A0E1024DF3BA00000717C /* AppDelegate.swift in Sources */,
+				E09AB59B24EC6C6000281AA4 /* ImageService.swift in Sources */,
 				E08A0E1224DF3BA00000717C /* SceneDelegate.swift in Sources */,
 				E08A0E1A24DF3BA00000717C /* Apple_RSS.xcdatamodeld in Sources */,
 				E08A0E5224E2466B0000717C /* AlbumTableViewCell.swift in Sources */,

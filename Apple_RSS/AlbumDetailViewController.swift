@@ -10,8 +10,6 @@ import UIKit
 
 class AlbumDetailViewController: UIViewController {
 
-    
-
     var albumDetails: Album? {
         didSet {
             guard let albumItem = albumDetails else {return}
@@ -20,7 +18,10 @@ class AlbumDetailViewController: UIViewController {
             }
             if let albumUrl = albumItem.artworkUrl100 {
                 let url :URL = NSURL(string: albumUrl)! as URL
-                albumImageView.load(url:url)
+                //albumImageView.load(url:url)
+                ImageService.getImage(withURL: url, completion: {image in
+                    self.albumImageView.image = image
+                })
             }
             if let artistName = albumItem.artistName {
                 artistNameLabel.text = "\(artistName) "
@@ -54,7 +55,6 @@ class AlbumDetailViewController: UIViewController {
         img.contentMode = .scaleAspectFill
         img.translatesAutoresizingMaskIntoConstraints = false
         img.contentMode = .scaleAspectFit
-        //img.layer.cornerRadius = 35
         img.clipsToBounds = true
         return img
     }()

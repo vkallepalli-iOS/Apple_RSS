@@ -20,7 +20,9 @@ class AlbumTableViewCell: UITableViewCell {
             }
             if let albumUrl = albumItem.artworkUrl100 {
                 let url :URL = NSURL(string: albumUrl)! as URL
-                albumImageView.load(url:url)
+                ImageService.getImage(withURL: url, completion: {image in
+                    self.albumImageView.image = image
+                })
             }
             if let artistName = albumItem.artistName {
                 artistNameLabel.text = artistName
@@ -97,25 +99,4 @@ class AlbumTableViewCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
 
-}
-
-extension UIImageView {
-    func load(url: URL) {
-        let imageFromCache = imageCache.object(forKey: url.absoluteString as NSString)
-        if imageFromCache != nil {
-            self.image = imageFromCache
-        } else {
-            
-            DispatchQueue.global().async { [weak self] in
-                if let data = try? Data(contentsOf: url) {
-                    if let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            self?.image = image
-                            imageCache.setObject(image, forKey: url.absoluteString as NSString)
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
